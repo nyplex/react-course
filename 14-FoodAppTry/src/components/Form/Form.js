@@ -53,7 +53,7 @@ const Form = (props) => {
             street: enteredStreet,
             city: enteredCity,
             postalCode: enteredPostalCode,
-        }, cartCtx.items);
+        }, cartCtx);
     };
     const nameClasses = `${classes.control} ${
         formInputValidity.name ? "" : classes.invalid
