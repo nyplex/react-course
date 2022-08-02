@@ -1,0 +1,19 @@
+.container {
+    @apply mx-auto text-center
+}
+.btnContainer {
+    @apply mt-[24px] flex flex-row gap-[16px] justify-center
+}
+.btnFirst {
+    @apply bg-silver heading__xs p-[15px] rounded-[10px] shadow-[inset_0px_-4px_0px_#6B8997]
+}
+.btnSecond {
+    @apply bg-lightYellow rounded-[10px] heading__xs p-[15px] shadow-[inset_0px_-4px_0px_#CC8B13]
+}
+p {
+    @apply heading__xs text-silver
+}
+
+h3 {
+    @apply heading__l text-lightYellow
+}

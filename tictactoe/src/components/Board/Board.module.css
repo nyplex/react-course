@@ -1,0 +1,6 @@
+.boardContainer {
+    @apply w-full flex flex-row justify-between gap-[20px] mb-[20px]
+}
+.container {
+    @apply max-w-[460px] mx-auto
+}

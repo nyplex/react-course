@@ -1,0 +1,13 @@
+.header {
+    @apply flex flex-row items-center justify-between mb-[20px]
+}
+
+.logoContainer {
+    @apply flex flex-row items-center gap-[8px];
+}
+.logo {
+    @apply w-[32px] h-[32px];
+}
+.resetBtn {
+    @apply bg-silver shadow-[inset_0px_-4px_0px_#6B8997] rounded-[10px] max-h-[52px] max-w-[52px] p-[16px]
+}

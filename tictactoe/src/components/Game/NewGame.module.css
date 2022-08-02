@@ -1,0 +1,35 @@
+.main_container {
+    @apply max-w-[460px] mx-auto mt-[100px]
+}
+
+.header {
+    @apply flex flex-row w-full justify-center gap-[8px] mb-[40px]
+}
+
+.small_heading {
+    @apply heading__xs text-silver text-center
+}
+.container {
+    @apply bg-semiDarkNavy pt-[24px] pb-[30px] px-[24px] rounded-[15px] shadow-[inset_0px_-8px_0px_#10212A]
+}
+.switches_container {
+    @apply w-full bg-darkNavy p-[9px] flex flex-row justify-center gap-2 mt-[24px] mb-[17px]
+}
+.switch {
+    @apply flex-1 flex justify-center py-[11px] rounded-[10px] cursor-pointer
+}
+.switch.selected {
+@apply bg-white
+}
+.span {
+    @apply body__m text-silver text-center
+}
+.btn {
+    @apply button__main
+}
+.btn__yellow {
+    @apply button__main__yellow btn mb-[20px] mt-[40px]
+}
+.btn__blue {
+    @apply button__main__blue btn
+}

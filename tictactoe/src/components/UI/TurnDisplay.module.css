@@ -1,0 +1,3 @@
+.container {
+    @apply bg-semiDarkNavy shadow-[inset_0px_-4px_0px_#10212A] rounded-[10px] px-[30px] py-[13px] max-h-[52px] text-silver flex flex-row items-center heading__xs gap-[13px]
+}

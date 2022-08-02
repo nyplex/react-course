@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-darkNavy py-6
+  }
+}
+
+@layer utilities {
+  .button__main {
+    @apply w-full rounded-[15px] font-outfit font-bold text-[20px] text-darkNavy pt-[17px] pb-[20px]
+  }
+  .button__main__yellow {
+    @apply bg-lightYellow shadow-[inset_0px_-8px_0px_#CC8B13] hover:bg-lightYellowHover
+  }
+  .button__main__blue { 
+    @apply bg-lightBlue shadow-[inset_0px_-8px_0px_#118c87] hover:bg-lightBlueHover
+  }
+  .button__secondary {
+    @apply w-full rounded-[10px] font-outfit font-bold text-[16px] text-darkNavy pt-[10px] pb-[14px]
+  }
+  .button__secondary__yellow {
+    @apply bg-lightYellow shadow-[inset_0px_-4px_0px_#CC8B13] hover:bg-lightYellowHover
+  }
+  .button__secondary__silver {
+    @apply bg-silver shadow-[inset_0px_-4px_0px_#6B8997] hover:bg-silverHover
+  }
+  .heading__l {
+    @apply font-outfit font-bold text-[40px] tracking-[2.5px]
+  }
+  .heading__m {
+    @apply font-outfit font-bold text-[24px] tracking-[1.5px]
+  }
+  .heading__S {
+    @apply font-outfit font-bold text-[20px] tracking-[1.25px]
+  }
+  .heading__xs {
+    @apply font-outfit font-bold text-[16px] tracking-[1px]
+  }
+  .body__m {
+    @apply font-outfit font-medium text-[14px] tracking-[0.8px]
+  }
+}

@@ -1,0 +1,27 @@
+.container  {
+    @apply flex flex-row justify-between
+}
+
+.scoreDisplay {
+    @apply rounded-[15px] px-[41px] py-[12px]
+}
+
+.scoreDisplay p {
+    @apply flex flex-col items-center heading__m text-darkNavy
+}
+
+.scoreDisplay p > span {
+    @apply body__m
+}
+
+.blue {
+    @apply bg-lightBlue
+}
+
+.gray {
+    @apply bg-silver
+}
+
+.yellow {
+    @apply bg-lightYellow
+}

@@ -1,0 +1,11 @@
+.cardContainer  {
+    @apply bg-semiDarkNavy w-full rounded-[15px] shadow-[inset_0px_-8px_0px_#10212A] p-[38px] min-h-[140px] max-h-[140x] min-w-[140px] max-w-[140px]
+}
+
+.set {
+    @apply cursor-not-allowed
+}
+
+.unset {
+    @apply cursor-pointer
+}
