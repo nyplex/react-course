@@ -42,13 +42,21 @@ const gameReducer = (state, action) => {
                 ...action.payload,
             };
         case "ADD_SYMBOL":
+            const key = action.payload.index
+            const symbol = action.payload.symbol
+            const obj = state.case
+            obj[key] = symbol
             return {
                 ...state,
-                case: {
-                    ...state.case,
-                    [action.payload.index]: action.payload.symbol,
-                }
-            }
+                case: obj,
+            };
+
+        case "CPU_TURN":
+            return {
+                ...state,
+                case: action.playload,
+            };
+
         case "NEXT_TURN":
             return {
                 ...state,
@@ -60,9 +68,9 @@ const gameReducer = (state, action) => {
                     2: {
                         ...state.players["2"],
                         isTurn: !state.players["2"].isTurn,
-                    }
-                }
-            }
+                    },
+                },
+            };
         default:
             break;
     }

@@ -32,7 +32,17 @@ const GameProvider = (props) => {
             2: 0
         },
         newGame: true,
-        case: [null, null, null, null, null, null, null, null, null],
+        case: {
+            a: null,
+            b: null,
+            c: null,
+            d: null,
+            e: null,
+            f: null,
+            g: null,
+            h: null,
+            i: null,
+        },
     });
 
     const restartGame = () => {
@@ -60,6 +70,12 @@ const GameProvider = (props) => {
             type: "NEXT_TURN",
         });
     }
+    const cpuTurn = (obj) => {
+        dispatchGame({
+            type: "CPU_TURN",
+            playload: obj
+        })
+    }
     const gameContext = {
         players: gameState.players,
         mode: gameState.mode,
@@ -70,6 +86,7 @@ const GameProvider = (props) => {
         newGame: gameState.newGame,
         addSymbol: addSymbol,
         nextTurn: nextTurn,
+        cpuTurn: cpuTurn,
     };
 
     return (

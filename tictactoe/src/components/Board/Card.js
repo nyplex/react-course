@@ -16,11 +16,29 @@ const Card = (props) => {
     }
 
     const addSymbolHandler = () => {
+        if(props.symbol) {
+            return
+        }
         const symbol = gameCtx.players["1"].isTurn
             ? gameCtx.players["1"].symbol
             : gameCtx.players["2"].symbol;
-        gameCtx.addSymbol(props.id - 1, symbol);
-        gameCtx.nextTurn()
+        gameCtx.addSymbol(props.id, symbol);
+        if(gameCtx.mode === "cpu") {
+            const arr = gameCtx.case
+            const keys = []
+            for (let k in arr) {
+                console.log(arr[k]);
+                if(arr[k] === null) {
+                    keys.push(k)
+                }
+            }
+            const rdm = keys[Math.floor(Math.random() * keys.length)]
+            const obj2 = gameCtx.case
+            obj2[rdm] = gameCtx.players["2"].symbol
+            gameCtx.cpuTurn(obj2)
+        }else{
+            gameCtx.nextTurn()
+        }
     };
 
     return (

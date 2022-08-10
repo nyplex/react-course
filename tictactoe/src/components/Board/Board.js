@@ -7,26 +7,26 @@ import Score from "../Score/Score";
 import GameContext from "../../context/game-context";
 
 const Board = (props) => {
-    const gameCtx = useContext(GameContext)
-    const cases = gameCtx.case
+    const gameCtx = useContext(GameContext);
+    const cases = gameCtx.case;
     return (
         <Fragment>
             <div className={classes.container}>
                 <BoardHeader />
                 <div className={classes.boardContainer}>
-                    <Card id='1' symbol={cases[0]} />
-                    <Card id='2' symbol={cases[1]} />
-                    <Card id='3' symbol={cases[2]} />
+                    <Card id="a" symbol={cases["a"]} />
+                    <Card id="b" symbol={cases["b"]} />
+                    <Card id="c" symbol={cases["c"]} />
                 </div>
                 <div className={classes.boardContainer}>
-                    <Card id='4' symbol={cases[3]} />
-                    <Card id='5' symbol={cases[4]} />
-                    <Card id='6' symbol={cases[5]} />
+                    <Card id="d" symbol={cases["d"]} />
+                    <Card id="e" symbol={cases["e"]} />
+                    <Card id="f" symbol={cases["f"]} />
                 </div>
                 <div className={classes.boardContainer}>
-                    <Card id='7' symbol={cases[6]} />
-                    <Card id='8' symbol={cases[7]} />
-                    <Card id='9' symbol={cases[8]} />
+                    <Card id="g" symbol={cases["g"]} />
+                    <Card id="h" symbol={cases["h"]} />
+                    <Card id="i" symbol={cases["i"]} />
                 </div>
                 <Score />
             </div>
