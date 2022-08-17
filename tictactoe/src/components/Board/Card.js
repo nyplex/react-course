@@ -6,47 +6,31 @@ import classes from "./Card.module.css";
 
 const Card = (props) => {
     const gameCtx = useContext(GameContext);
+    console.log(gameCtx);
     let symbol = null;
-    if (props.symbol === "cross") {
+    if (props.symbol === 1) {
         symbol = <Cross fill="#31C3BD" size="100%" />;
-    } else if (props.symbol === "circle") {
+    } else if (props.symbol === 2) {
         symbol = <Circle fill="#F2B137" size="100%" />;
     } else {
-        symbol = "";
+        symbol = null;
     }
 
-    const addSymbolHandler = () => {
-        if(props.symbol) {
-            return
-        }
-        const symbol = gameCtx.players["1"].isTurn
-            ? gameCtx.players["1"].symbol
-            : gameCtx.players["2"].symbol;
-        gameCtx.addSymbol(props.id, symbol);
+    const AddSymbolHandler = (id) => {
+        gameCtx.addSymbol(id)
         if(gameCtx.mode === "cpu") {
-            const arr = gameCtx.case
-            const keys = []
-            for (let k in arr) {
-                console.log(arr[k]);
-                if(arr[k] === null) {
-                    keys.push(k)
-                }
-            }
-            const rdm = keys[Math.floor(Math.random() * keys.length)]
-            const obj2 = gameCtx.case
-            obj2[rdm] = gameCtx.players["2"].symbol
-            gameCtx.cpuTurn(obj2)
-        }else{
-            gameCtx.nextTurn()
+            setTimeout(() => {
+                console.log("cpu turn");
+            }, 1000);
         }
-    };
+    }
 
     return (
         <div
             className={`${classes.cardContainer} ${
                 props.symbol !== null ? classes.set : classes.unset
             }`}
-            onClick={addSymbolHandler}
+            onClick={AddSymbolHandler.bind(null, props.id)}
         >
             {symbol}
         </div>

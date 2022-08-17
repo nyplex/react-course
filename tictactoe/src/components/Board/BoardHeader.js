@@ -9,9 +9,9 @@ import GameContext from "../../context/game-context";
 
 const BoardHeader = () => {
     const gameCtx = useContext(GameContext);
-    const symbolTurn = gameCtx.players["1"].isTurn
-        ? gameCtx.players["1"].symbol
-        : gameCtx.players["2"].symbol;
+    const symbolTurn = gameCtx.turn === 1
+        ? "cross"
+        : "circle";
 
     const resetHandler = () => {
         gameCtx.restartGame();

@@ -3,7 +3,6 @@ import GameContext from "./game-context";
 import gameReducer from "./game-reducer";
 
 export const defaultSetting = {
-    players: {},
     mode: "cpu",
     score: {
         1: 0,
@@ -21,11 +20,11 @@ export const defaultSetting = {
         i: null,
     },
     newGame: true,
+    turn: 1,
 };
 
 const GameProvider = (props) => {
     const [gameState, dispatchGame] = useReducer(gameReducer, {
-        players: {},
         mode: "cpu",
         score: {
             1: 0,
@@ -43,6 +42,7 @@ const GameProvider = (props) => {
             h: null,
             i: null,
         },
+        turn: 1,
     });
 
     const restartGame = () => {
@@ -56,37 +56,32 @@ const GameProvider = (props) => {
             payload: obj,
         })
     }
-    const addSymbol = (index, symbol) => {
+    const addSymbol = (id) => {
         dispatchGame({
             type: "ADD_SYMBOL",
             payload: {
-                index,
-                symbol,
+                id: id,
+                turn: gameState.turn,
             },
         });
     }
-    const nextTurn = () => {
+
+    const cpuAddSymbol = () => {
         dispatchGame({
-            type: "NEXT_TURN",
-        });
-    }
-    const cpuTurn = (obj) => {
-        dispatchGame({
-            type: "CPU_TURN",
-            playload: obj
+            type: "CPU_ADD_SYMBOL",
         })
     }
+
     const gameContext = {
-        players: gameState.players,
         mode: gameState.mode,
         score: gameState.score,
         case: gameState.case,
         restartGame: restartGame,
         setNewGame: setNewGame,
         newGame: gameState.newGame,
+        turn: gameState.turn,
         addSymbol: addSymbol,
-        nextTurn: nextTurn,
-        cpuTurn: cpuTurn,
+        CpuAddSymbol: cpuAddSymbol,
     };
 
     return (
